@@ -1,8 +1,8 @@
 package com.sass_lang;
 
 import org.jruby.embed.ScriptingContainer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import javax.servlet.*;
 import java.io.File;
@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class SassCompilingFilter implements Filter {
-    private static final Logger LOG = LoggerFactory.getLogger(SassCompilingFilter.class);
+//    private static final Logger LOG = LoggerFactory.getLogger(SassCompilingFilter.class);
     private static final int DWELL = 1000;
     protected static final String RETHROW_EXCEPTIONS_PARAM = "rethrowExceptions";
     protected static final String ONLY_RUN_KEY_PARAM = "onlyRunWhenKey";
@@ -46,13 +46,13 @@ public class SassCompilingFilter implements Filter {
     }
 
     private void run() {
-        LOG.debug("compiling sass");
+//        LOG.debug("compiling sass");
 
         try {
             initialize();
             compile();
         } catch (Exception e) {
-            LOG.warn("exception thrown while compiling sass", e);
+//            LOG.warn("exception thrown while compiling sass", e);
 
             if (rethrowExceptions) {
                 throw new RuntimeException(e);
